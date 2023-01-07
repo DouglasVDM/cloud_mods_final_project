@@ -1,0 +1,85 @@
+
+## Friday, 06 January 2023
+
+Implement a folder structure to isolate environments
+
+Seperate folders makes it much clearer which environment you're deploying to.
+
+Seperate Terraform folders (and therefore separate state files) for each environment (staging, production, etc.) and for each component (VPC, services, databases) within that environment.
+
+* stage: An environment for pre-production workloads (i.e., testing)
+* prod: An environment for production workloads (i.e., user-facing apps)
+* mgmt: An environment for DevOps tooling (e.g., bastion host, CI server)
+* global: A place to put resources that are used across all environments (e.g., S3, IAM)
+
+Within each environment, there are separate folders for each “component.”
+
+* vpc: The network topology for this environment.
+* services: The apps or microservices to run in this environment, such as a Ruby on Rails frontend or a Scala backend. Each app could even live in its own folder to isolate it from all the other apps.
+* data-storage: The data stores to run in this environment, such as MySQL or Redis. Each data store could even reside in its own folder to isolate it from all other data stores.
+
+Within each component, there are the actual Terraform configuration files, which are organized according to the following naming conventions:
+
+* variables.tf: Input variables
+* outputs.tf: Output variables
+* main.tf: Resources and data sources
+
+Using a consistent, predictable naming convention makes your code easier to browse: e.g., you’ll always know where to look to find a variable, output, or resource.
+
+## Disadvantages
+### Working with multiple folders:
+But it also prevents you from creating your entire infrastructure in one command.
+You need to run terraform apply separately in each folder. 
+
+```
+Solution: Use [Terragrunt][terragrunt], you can run commands across multiple folders concurrently using the run-all command.
+```
+
+### Copy/paste: 
+The file layout has a lot of duplication. 
+
+```
+Solution: You won’t actually need to copy and paste all of that code! Next step is, how to use Terraform modules to keep all of this code DRY.
+```
+
+### Resource dependencies: 
+Breaking the code into multiple folders makes it more difficult to use resource dependencies. 
+You can no longer directly access attributes of the database using an attribute reference (e.g., access the database address via aws_db_instance.foo.address).
+
+```
+Solution: One option is to use dependency blocks in Terragrunt.
+Another option is to use the terraform_remote_state data source, as described in the next section.
+```
+### Completed storage of terraform state in S3 bucket
+
+---
+
+## Todo:
+Storing and retrieving 
+db_username
+db_password
+
+### AWS Key Management Service
+
+```
+Free tier
+AWS KMS provides a free tier of 20,000 requests/month calculated across all Regions that the service is available.
+
+*Requests to the GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext API operations and requests to API operations such as Sign, Verify, Encrypt, Decrypt, and GetPublicKey that reference asymmetric KMS keys are excluded from the free tier.
+
+```
+
+### AWS Secrets Manager
+
+```
+Free Trial
+30-DAY TRIAL PERIOD
+You can try AWS Secrets Manager at no additional charge with a 30-day free trial. The free trial enables you to rotate, manage, and retrieve secrets over the 30-day period.
+
+Your free trial starts when you store your first secret.
+
+```
+
+
+
+[terragrunt]: https://terragrunt.gruntwork.io/
