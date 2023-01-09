@@ -53,11 +53,22 @@ Another option is to use the terraform_remote_state data source, as described in
 ### Completed storage of terraform state in S3 bucket
 
 ---
+## Sunday, 08 January 2023
+Stared with Github Actions
+
+## Monday, 09 January 2023
+
+Yaml file has syntax errors
+Also had to brush up on [Git Branching](https://www.varonis.com/blog/git-branching)
+
+A fellow trainee suggested [Github Actions extention](https://marketplace.visualstudio.com/items?itemName=cschleiden.vscode-github-actions) which has automatic syntax highlighting and suggestions
+
 
 ## Todo:
-Storing and retrieving 
-db_username
-db_password
+1. Github Actions
+2. Storing and retrieving
+   * db_username
+   * db_password
 
 ### AWS Key Management Service
 
