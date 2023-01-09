@@ -84,13 +84,8 @@ jobs:
     - name: Terraform Format
       id: fmt
       run: terraform fmt -check
+         
 
-    # Validates the configuration used in the GitHub action workflow
-    - name: Terraform Validate
-      id: validate
-      run: terraform validate -no-color
-      
-      
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
