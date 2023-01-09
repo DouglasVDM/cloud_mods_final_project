@@ -90,8 +90,7 @@ jobs:
       id: validate
       run: terraform validate -no-color
       
-    # Terraform Plan generates a Terraform plan. Since main.tf configures the Terraform Cloud integration, this step triggers a remote plan run in the Terraform Cloud
-    # Notice: This step only runs on pull requests. The PR generates a plan. When the PR is merged, that plan will be applied. This step will continue even when it errors. This allows the next step to display the plan error message even if this step fails.
+      
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
