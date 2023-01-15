@@ -63,12 +63,24 @@ Also had to brush up on [Git Branching](https://www.varonis.com/blog/git-branchi
 
 A fellow trainee suggested [Github Actions extention](https://marketplace.visualstudio.com/items?itemName=cschleiden.vscode-github-actions) which has automatic syntax highlighting and suggestions
 
+## Sunday, 15 January, 2023
 
+Created private repo on [Amazon ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-console.html)
+where you store your Docker or Open Container Initiative (OCI) images in Amazon 
+Each time you push or pull an image from Amazon ECR, 
+you specify the repository and the registry location which 
+informs where to push the image to or where to pull it from.
+```
+I was looking for a way to pull an image onto an EC2 instance
+Hopefully I can pull the FE and API images to the respective EC2 instances
+```
 ## Todo:
 1. Github Actions
 2. Storing and retrieving
    * db_username
    * db_password
+3. [Managing Amazon S3 access with VPC endpoints and S3 Access Points
+](https://aws.amazon.com/blogs/storage/managing-amazon-s3-access-with-vpc-endpoints-and-s3-access-points/)
 
 ### AWS Key Management Service
 
@@ -91,6 +103,7 @@ Your free trial starts when you store your first secret.
 
 ```
 
+### 
 
 
 [terragrunt]: https://terragrunt.gruntwork.io/
