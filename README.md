@@ -7,7 +7,8 @@
 ](https://aws.amazon.com/blogs/storage/managing-amazon-s3-access-with-vpc-endpoints-and-s3-access-points/)
 4. FE
 5. Connect FE to API
-6. 
+6. TLS - Transfer Layer Security
+7. 
 
 
 
@@ -100,6 +101,24 @@ Spent time trying to pull the API Docker image from AWS ECR Private repo. No suc
 ## Tueday, 17 January
 
 Moved on to FE. Started with *reate-react-app* to work on connecting FE to API
+
+## Wednesday, 18 January
+
+Installed [Postgres](https://computingforgeeks.com/installing-postgresql-database-server-on-ubuntu/) on ubuntu partition to set up FE > API > DB connection. 
+I'm facing a challenge with rolling power cutsin ZA escalated to 3 times per day.
+
+## Thursday, 19 January
+Postgres testDB is set up. Hopefully complete the Full Stack flow.
+Then move the flow to AWS within my Custom VPC, implementing it all in Terraform.
+
+## Friday, 20 January
+Full Stack app is running on local.
+Next step is to Dockerise the FE, 
+apdate the API Dockerfile with the Postgres changes
+Set up new Postgres data tier in Terraform
+
+
+
 *******
 **
 **
