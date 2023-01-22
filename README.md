@@ -110,10 +110,12 @@ Installed [Postgres](https://computingforgeeks.com/installing-postgresql-databas
 I'm facing a challenge with rolling power cutsin ZA escalated to 3 times per day.
 
 ## Thursday, 19 January
+
 Postgres testDB is set up. Hopefully complete the Full Stack flow.
 Then move the flow to AWS within my Custom VPC, implementing it all in Terraform.
 
 ## Friday, 20 January
+
 Full Stack app is running on local.
 Next step is to Dockerise the FE, 
 apdate the API Dockerfile with the Postgres changes
