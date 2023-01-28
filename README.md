@@ -1,4 +1,4 @@
-[Cloud Module - Final Project.pdf](https://codeyourfuture.slack.com/files/U3XTPVDS7/F04DJ5ZBGMB/cloud_module_-_final_project.pdf)
+[Cloud Module - Final Project.pdf](https://drive.google.com/file/d/1ZZeKjo0MPhqRPQETKPmf0opmLLtfOGY0/view?usp=sharing)
 
 ## Todo:
 1. Complete Github Actions
